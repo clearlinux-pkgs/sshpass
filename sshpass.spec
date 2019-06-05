@@ -4,7 +4,7 @@
 #
 Name     : sshpass
 Version  : 1.06
-Release  : 1
+Release  : 2
 URL      : http://http.debian.net/debian/pool/main/s/sshpass/sshpass_1.06.orig.tar.gz
 Source0  : http://http.debian.net/debian/pool/main/s/sshpass/sshpass_1.06.orig.tar.gz
 Summary  : No detailed summary available
