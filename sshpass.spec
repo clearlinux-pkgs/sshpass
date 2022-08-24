@@ -4,9 +4,9 @@
 #
 Name     : sshpass
 Version  : 1.09
-Release  : 4
-URL      : http://http.debian.net/debian/pool/main/s/sshpass/sshpass_1.09.orig.tar.gz
-Source0  : http://http.debian.net/debian/pool/main/s/sshpass/sshpass_1.09.orig.tar.gz
+Release  : 5
+URL      : https://mirrors.kernel.org/debian/pool/main/s/sshpass/sshpass_1.09.orig.tar.gz
+Source0  : https://mirrors.kernel.org/debian/pool/main/s/sshpass/sshpass_1.09.orig.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -51,15 +51,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1612290204
+export SOURCE_DATE_EPOCH=1661368958
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -71,10 +71,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1612290204
+export SOURCE_DATE_EPOCH=1661368958
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/sshpass
-cp %{_builddir}/sshpass-1.09/COPYING %{buildroot}/usr/share/package-licenses/sshpass/dfac199a7539a404407098a2541b9482279f690d
+cp %{_builddir}/sshpass-%{version}/COPYING %{buildroot}/usr/share/package-licenses/sshpass/dfac199a7539a404407098a2541b9482279f690d
 %make_install
 
 %files
