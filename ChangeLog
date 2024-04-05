@@ -1,3 +1,14 @@
+Version 1.10
+        * Convert repo to git
+        * Remove sig unsafe functions from signal handler (Ticket #22).
+        * Allow -e to explicitly specify the environment variable to use
+          (Ticket #5).
+        * Unset the variable specified with -e before calling subprogram
+          (Ticket #25).
+        * Change the logic for setting a controlling TTY. Fixes compatibility
+          issues with OpenSolaris and MSYS/Cygwin. Thanks Marcin Olszewski for
+          the fix.
+
 Version 1.09
 	* Explicitly set the controlling TTY (SF patch #7)
 
